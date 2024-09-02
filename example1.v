@@ -1,5 +1,7 @@
-module example1(x1,x2,x3,x4,f);
-	input x1,x2,x3,x4;
+module example1(a,b,c,d,f);
+	input a,b,c,d;
 	output f;
-	assign f = (x2 & ~x3) | (x3 & ~x4);
+	assign g = (a & ~b) | (~a & b);
+	assign f = (g & c) | (~g & d);
 endmodule
+

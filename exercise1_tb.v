@@ -1,15 +1,15 @@
 `timescale 1ns/1ns
-`include "example1.v"
+`include "exercise1.v"
 
-module example1_tb();
-	reg a,b,c,d;
+module exercise1_tb();
+	reg a, b, c, d;
 	wire f;
-	
-	example1 ex1(a,b,c,d,f);
-		initial
-		begin
-		$dumpfile("example1_tb.vcd");
-		$dumpvars(0, example1_tb);
+	exercise1 ex1(a,b,c,d,f);
+	initial 
+	begin
+		$dumpfile("exercise1_tb.vcd");
+		$dumpvars(0, exercise1_tb);
+		
 		a = 1'b0; b = 1'b0; c = 1'b0; d = 1'b0; #10;
 		a = 1'b0; b = 1'b0; c = 1'b0; d = 1'b1; #10;
 		a = 1'b0; b = 1'b0; c = 1'b1; d = 1'b0; #10;
@@ -26,10 +26,10 @@ module example1_tb();
 		a = 1'b1; b = 1'b1; c = 1'b0; d = 1'b1; #10;
 		a = 1'b1; b = 1'b1; c = 1'b1; d = 1'b0; #10;
 		a = 1'b1; b = 1'b1; c = 1'b1; d = 1'b1; #10;
-		$display("test complete");
-		end
-endmodule
-
 		
+		$display("Test Complete");
+	end 
+endmodule
+	
 	
 	
