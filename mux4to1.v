@@ -1,17 +1,14 @@
-module mux4to1(in,sel,out);
-	input [3:0] in;
-	input [1:0] sel;
-	output reg out;
-	always@(*)
-		begin
-		if(sel == 2'b00)
-			out = in[0];
-		else if(sel == 2'b01)
-			out = in[1];
-		else if(sel == 2'b10)
-			out = in[2];
-		else
-			out = in[3];
-		end
+module mux4to1(ab,c,d,out);
+   input [1:0]ab;
+   input c,d;
+   output reg out;
+   always@*
+   begin
+   case(ab)
+        2'b00: out = ~c | ~d;
+        2'b01: out = ~d;
+        2'b10: out = ~c & d;
+        2'b11: out = ~d;
+    endcase
+    end
 endmodule
-
